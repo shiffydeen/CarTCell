@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAR T-Cell Digital Twin - Manufacturing Demo</title>
+    <script src="https://cdn.socket.io/4.5.2/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧬 CAR T-Cell Digital Twin</h1>
+            <p>Interactive Manufacturing Process Optimization Demo</p>
+        </div>
+
+        <div class="main-content">
+            <div class="comparison-banner">
+                Compare Standard Protocol vs AI-Discovered Strategy
+            </div>
+
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <h3>🎛️ Control Panel</h3>
+                
+                <div class="form-group">
+                    <label for="profileSelect">Patient Cell Profile:</label>
+                    <select id="profileSelect">
+                        <option value="default">Loading profiles...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Simulation Scenarios:</label>
+                    <button id="runStandardBtn" class="btn btn-primary">
+                        🧪 Run Standard Protocol
+                    </button>
+                    <button id="runAIBtn" class="btn btn-success">
+                        🤖 Run AI Strategy
+                    </button>
+                    <button id="resetBtn" class="btn btn-secondary">
+                        🔄 Reset Simulation
+                    </button>
+                </div>
+
+                <div class="form-group">
+                    <label>Current Profile:</label>
+                    <div id="currentProfile">
+                        Standard Cell Profile
+                    </div>
+                </div>
+            </div>
+
+            <!-- Simulation Canvas -->
+            <div class="simulation-area">
+                <h3>🔬 Cell Culture Simulation</h3>
+                <canvas id="simulationCanvas" width="500" height="500"></canvas>
+                <div id="simulationStatus" class="simulation-status status-idle">
+                    Simulation Ready
+                </div>
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-color legend-naive"></div>
+                        <span>Naive Cells</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color legend-activated"></div>
+                        <span>Activated Cells</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color legend-exhausted"></div>
+                        <span>Exhausted Cells</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color legend-bead"></div>
+                        <span>Activation Beads</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metrics Panel -->
+            <div class="metrics-panel">
+                <h3>📊 Live Metrics</h3>
+                
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <span id="totalCells" class="kpi-value">0</span>
+                        <div class="kpi-label">Total Cells</div>
+                    </div>
+                    <div class="kpi-card">
+                        <span id="activatedCells" class="kpi-value">0</span>
+                        <div class="kpi-label">Activated</div>
+                    </div>
+                    <div class="kpi-card">
+                        <span id="potentCells" class="kpi-value">0</span>
+                        <div class="kpi-label">Potent Cells</div>
+                    </div>
+                    <div class="kpi-card">
+                        <span id="avgPotency" class="kpi-value">0.00</span>
+                        <div class="kpi-label">Avg Potency</div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="metricsChart"></canvas>
+                </div>
+
+                <div class="action-log">
+                    <h4>Action Log</h4>
+                    <div id="actionLog">
+                        <div class="action-entry">Demo ready - Select a scenario to begin</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='style.css') }}"></script>
+</body>
+</html>

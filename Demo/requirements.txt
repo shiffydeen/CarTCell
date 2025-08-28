@@ -1,0 +1,16 @@
+# Core dependencies from main project
+pygame>=2.6.1
+gymnasium>=1.2.0
+stable-baselines3>=2.7.0
+torch>=2.8.0
+
+# Web demo specific dependencies
+Flask>=3.0.0
+Flask-SocketIO>=5.3.6
+python-socketio>=5.11.0
+eventlet>=0.36.0
+
+# Additional useful packages
+numpy>=1.21.0
+matplotlib>=3.10.0
+pandas>=2.3.0
