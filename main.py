@@ -22,9 +22,13 @@ env = CarTCellEnv()
 
 # 2. Instantiate the RL Agent (PPO is a good start, as per the paper)
 model = PPO(
-    "MlpPolicy",      # Multi-layer Perceptron Policy for tabular data
-    env,
-    verbose=1,        # Print training progress
+    policy="MlpPolicy",
+    env=env,
+    n_steps=4096,  # Increased for more experience collection
+    gamma=0.999,  # Increased for long-term reward focus
+    learning_rate=0.0001,  # Slightly reduced for stability
+    ent_coef=0.01,  # Increased to encourage exploration
+    verbose=1,
     tensorboard_log="./results/ppo_cart_tensorboard/"
 )
 

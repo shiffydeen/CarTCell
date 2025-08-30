@@ -1,0 +1,68 @@
+CAR T-CELL RL AGENT TRAINING ANALYSIS REPORT
+==================================================
+
+METRIC: TRAIN_EXPLAINED_VARIANCE
+Description: How well the value function predicts returns
+Expected Trend: increasing
+Actual Trend: increasing
+Trend Strength: strong (R² = 0.8553)
+Learning Status: good
+Initial Value: 0.001615
+Final Value: 0.539883
+Min Value: -0.000666
+Max Value: 0.577822
+Convergence Std: 0.046865
+------------------------------
+
+METRIC: TRAIN_LOSS
+Description: Overall training loss (should decrease)
+Expected Trend: decreasing
+Actual Trend: decreasing
+Trend Strength: moderate (R² = 0.5087)
+Learning Status: good
+Initial Value: 4891.657715
+Final Value: 2125.504150
+Min Value: 1006.549316
+Max Value: 11206.054688
+Convergence Std: 771.410028
+------------------------------
+
+METRIC: POLICY_GRADIENT_LOSS
+Description: Policy gradient loss (should decrease)
+Expected Trend: decreasing
+Actual Trend: increasing
+Trend Strength: weak (R² = 0.2484)
+Learning Status: concerning
+Initial Value: -0.016120
+Final Value: -0.000707
+Min Value: -0.018639
+Max Value: -0.000026
+Convergence Std: 0.000522
+------------------------------
+
+METRIC: VALUE_LOSS
+Description: Value function loss (should decrease)
+Expected Trend: decreasing
+Actual Trend: decreasing
+Trend Strength: moderate (R² = 0.6482)
+Learning Status: good
+Initial Value: 9643.593750
+Final Value: 4190.087891
+Min Value: 3700.337158
+Max Value: 20842.511719
+Convergence Std: 759.506709
+------------------------------
+
+METRIC: ENTROPY_LOSS
+Description: Entropy loss (exploration vs exploitation balance)
+Expected Trend: stabilizing
+Actual Trend: increasing
+Trend Strength: weak (R² = 0.1102)
+Learning Status: converging
+Initial Value: -1.087887
+Final Value: -0.803673
+Min Value: -1.087887
+Max Value: -0.682231
+Convergence Std: 0.005572
+------------------------------
+

@@ -18,6 +18,7 @@ class CarTCellEnv(gym.Env):
         self.current_step = 0
         self.max_steps = SIMULATION_STEPS // control_interval
         self.previous_avg_potency = 0
+        self.previous_potent_cells = 0
 
         # Action space: 0: Add beads, 1: Remove beads, 2: Skip
         self.action_space = spaces.Discrete(3)
@@ -71,6 +72,7 @@ class CarTCellEnv(gym.Env):
         self.simulation.reset()
         self.current_step = 0
         self.previous_avg_potency = 0
+        self.previous_potent_cells = 0
         observation = self._get_obs()
         info = {}
         return observation, info
