@@ -3,6 +3,7 @@ pygame>=2.6.1
 gymnasium>=1.2.0
 stable-baselines3>=2.7.0
 torch>=2.8.0
+gunicorn==21.2.0
 
 # Web demo specific dependencies
 Flask>=3.0.0
